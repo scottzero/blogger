@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :destroy, :edit, :update]
+  # BEFORE ACTION
   # This runs the set_article method before show,
   # destroy and edit, as specified by the only: key.
   # With this, @article is available within the scopes of the show,
@@ -23,6 +24,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def new
