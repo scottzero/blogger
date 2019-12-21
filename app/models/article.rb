@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
-  has_attached_file :image #has_attached_file is apart of the paper clip library
+  has_attached_file :image, styles: {medium: "300x300>", thumb: "100x100>"} #has_attached_file is apart of the paper clip library
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 
